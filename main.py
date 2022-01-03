@@ -15,6 +15,4 @@ def decrypt(encrypted):
     return decMessage
 
 
-print(encrypt(password))
-print(decrypt(encrypt(password)))
 
