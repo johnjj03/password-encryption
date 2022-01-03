@@ -1,14 +1,13 @@
 from cryptography.fernet import Fernet
 
+password=input("Enter your password ")
 
-message = "hello geeks"
-
-def encrypt():
+def encrypt(password):
 
     key = Fernet.generate_key()
     global fernet 
     fernet = Fernet(key)
-    encMessage = fernet.encrypt(message.encode())
+    encMessage = fernet.encrypt(password.encode())
     return encMessage
 
 def decrypt(encrypted):
@@ -16,4 +15,6 @@ def decrypt(encrypted):
     return decMessage
 
 
+print(encrypt(password))
+print(decrypt(encrypt(password)))
 
