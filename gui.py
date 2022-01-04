@@ -1,25 +1,33 @@
 from tkinter import *
+import pickle
+from main import *
 
 window = Tk()
 
 window.title("Password Encryption")
 
-def clicked():
-    pass
 
-lbl = Label(window, text="Enter a word for the password")
-lbl.grid(column=0, row=0)
+def entry():
+    global title
+    title=Label(window,text="Enter a hint for the password")
+    btn_sub = Button(window,text="Submit", command=submit)
+    btn_quit = Button(window,text="Quit",command=window.destroy)
+    inp=Entry(window)
+    inp.focus()
 
-btn1 = Button(window, text="Enter", command=clicked)
-btn1.grid(column=1, row=0)
+    btn_sub.grid(row=2, column=0, sticky="ew", padx=5,pady=5)
+    btn_quit.grid(row=3,column=0,sticky="ew",padx=5)
+    inp.grid(row=1,column=0,sticky="ew",padx=5)
+    title.grid(row=0,column=0,sticky="ew",padx=5)
 
-txt = Entry(window,width=10)
-txt.grid(column=2,row=0)
+    global password_hint
+    password_hint=inp.get()
 
-txt.focus()
+def submit():
+    enc=encrypt(password_hint)
+    with open('Password.bin','ab') as f:
+        pickle.dump(enc,f)
+    title.config(text="Successfully Encrypted")
 
-password_hint=txt.get()
-
-
-window.geometry('350x200')
+entry()
 window.mainloop()

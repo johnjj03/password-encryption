@@ -1,6 +1,7 @@
 from cryptography.fernet import Fernet
+from pickle import *
 
-password=input("Enter your password ")
+
 
 def encrypt(password):
 
@@ -14,5 +15,10 @@ def decrypt(encrypted):
     decMessage = fernet.decrypt(encrypted).decode()
     return decMessage
 
-
+with open('Password.bin','rb') as f:
+    p=load(f)
+    print('Encrypted password ',p)
+    dec=decrypt(p)
+    print('Decrypted password ',dec)
+    
 
