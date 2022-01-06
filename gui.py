@@ -28,6 +28,7 @@ def submit():
     with open('Password.bin','ab') as f:
         pickle.dump(enc,f)
     title.config(text="Successfully Encrypted")
+    
 
 entry()
 window.mainloop()
