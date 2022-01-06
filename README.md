@@ -20,8 +20,6 @@ This project aims to generate and encrypt passwords for the user using Python.
 ```
 python3 main.py
 ```
--
-
 
 ### Technologies Used
 
