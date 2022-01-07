@@ -1,6 +1,5 @@
 from tkinter import *
-import pickle
-from main import *
+from pickle import *
 
 window = Tk()
 
@@ -10,8 +9,10 @@ window.title("Password Encryption")
 def entry():
     global title
     title=Label(window,text="Enter a hint for the password")
+    global btn_sub
     btn_sub = Button(window,text="Submit", command=submit)
     btn_quit = Button(window,text="Quit",command=window.destroy)
+    global inp
     inp=Entry(window)
     inp.focus()
 
@@ -20,14 +21,14 @@ def entry():
     inp.grid(row=1,column=0,sticky="ew",padx=5)
     title.grid(row=0,column=0,sticky="ew",padx=5)
 
-    global password_hint
-    password_hint=inp.get()
+    
 
 def submit():
-    enc=encrypt(password_hint)
-    with open('Password.bin','ab') as f:
-        pickle.dump(enc,f)
+    password_hint=inp.get()
+    with open('Password.bin','wb') as f:
+        dump(password_hint,f)
     title.config(text="Successfully Encrypted")
+    btn_sub['state']='disabled'
     
 
 entry()
