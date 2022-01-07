@@ -15,7 +15,12 @@ This project aims to generate and encrypt passwords for the user using Python.
 
 ##### a. If you have Python installed
 
-- Start the app with the following command.
+- Start the app with the following command :
+
+```
+python3 gui.py
+```
+- Encrypt and decrypt the password inputted by running :
 
 ```
 python3 main.py
