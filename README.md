@@ -13,7 +13,6 @@ This project aims to generate and encrypt passwords for the user using Python.
 
 ### Basic Setup
 
-##### a. If you have Python installed
 
 - Start the app with the following command :
 
