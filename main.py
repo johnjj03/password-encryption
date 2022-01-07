@@ -1,24 +1,23 @@
 from cryptography.fernet import Fernet
 from pickle import *
 
-
-
-def encrypt(password):
-
-    key = Fernet.generate_key()
-    global fernet 
-    fernet = Fernet(key)
-    encMessage = fernet.encrypt(password.encode())
-    return encMessage
-
-def decrypt(encrypted):
-    decMessage = fernet.decrypt(encrypted).decode()
-    return decMessage
-
+key = Fernet.generate_key()
+fernet = Fernet(key)
 with open('Password.bin','rb') as f:
-    p=load(f)
-    print('Encrypted password ',p)
-    dec=decrypt(p)
-    print('Decrypted password ',dec)
+    password=load(f)
+    e=fernet.encrypt(password.encode())
+    print('Encrypted password is ',e)
+    print('Decrypted password is ',fernet.decrypt(e).decode())
+
+    
+
+   
+
+
+
+
+
+
+
     
 
