@@ -8,21 +8,34 @@ This project aims to generate and encrypt passwords for the user using Python.
 ### Prerequisites
 
 - The program will run without any issues on any computer, but for a good experience, it is recommended to use a system with atleast 4 GB memory, and atleast 2 CPU cores.
-- Python must be installed along with the cryptography and tkinter modules.
 - You can use git to clone the repository, or you can download the zip file.
 
 ### Basic Setup
 
+- First, install the packages required by running
+
+```
+pip install -r requirements.txt
+```
+
+- Generate the key required and create the passwords.csv file by running
+
+```
+python3  keygen.py
+```
+
+- If python3 is giving you an error, then use python instead
 
 - Start the app with the following command :
 
 ```
-python3 gui.py
+python3 main.py
 ```
-- Encrypt and decrypt the password inputted by running :
+
+- Decrypt and view the password by running :
 
 ```
-python3 main.py
+python3 show_password.py
 ```
 
 ### Technologies Used
