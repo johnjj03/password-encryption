@@ -21,7 +21,7 @@ pip install -r requirements.txt
 - Generate the key required and create the passwords.csv file by running
 
 ```
-python3  keygen.py
+python3 keygen.py
 ```
 
 - If python3 is giving you an error, then use python instead
