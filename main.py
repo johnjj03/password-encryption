@@ -47,16 +47,18 @@ def submitted():
     popup = Tk()
     popup.title("Password Encryption")
     global title
-    title=Label(popup,text=("Password is "+generate()))
+    title=Label(popup,text=("Password is "+pw))
     btn_quit = Button(popup,text="Quit",command=end)
     title.grid(row=0,column=0,sticky="ew",padx=5)
     btn_quit.grid(row=1,column=0,sticky="ew",padx=5)
     popup.mainloop()
 
 def submit():
-    with open('passwords.csv','a') as p:
+    with open('passwords.csv','w') as p:
         w=writer(p)
-        w.writerow(generate())
+        global pw
+        pw=generate()
+        w.writerow(pw)
     submitted()
     encrypting()
 
