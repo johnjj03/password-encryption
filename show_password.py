@@ -9,7 +9,7 @@ with open('filekey.key', 'rb') as filekey:
     decrypted = fernet.decrypt(encrypted).decode()
 out=''
 for i in decrypted:
-    if i in [',','\r','\n',' ']:
+    if i in [',','\r','\n',' ','"',"'"]:
         pass
     else:
         out+=i
