@@ -18,7 +18,7 @@ This project aims to generate and encrypt passwords for the user using Python.
 pip install -r requirements.txt
 ```
 
-- Generate the key required and create the passwords.csv file by running
+- Generate the key required by running
 
 ```
 python3 keygen.py
