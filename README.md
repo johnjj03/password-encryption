@@ -24,7 +24,15 @@ pip install -r requirements.txt
 python3 keygen.py
 ```
 
-- If python3 is giving you an error, then use python instead
+- Create a free Twilio account and get your phone number ,Account SID and Authentication Token from Twilio
+
+- Create a .env file and add your information following this naming scheme:
+
+```
+account_sid = 'your_account_sid'
+auth_token = 'your_auth_token'
+tno='+12345678901'
+```
 
 - Start the app with the following command :
 
@@ -41,8 +49,8 @@ python3 show_password.py
 ### Technologies Used
 
 - All the visuals were built solely using ![Python](https://img.shields.io/badge/python-%2314354C.svg?style=for-the-badge&logo=python&logoColor=white) 
-- [**Tkinter**](https://docs.python.org/3/library/tkinter.html) and [**Cryptography**](https://pypi.org/project/cryptography/) were the libraries used to create the project.
-
+- [**Tkinter**](https://docs.python.org/3/library/tkinter.html),[**Cryptography**](https://pypi.org/project/cryptography/) and [**Twilio**](https://pypi.org/project/twilio/) were the libraries used to create the project.
 
 ### Main Contributors
+
  - [John J J](https://github.com/jxhn_jj/)
