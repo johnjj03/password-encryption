@@ -2,5 +2,6 @@ __pycache__
 filekey.key
 passwords.csv
 .env
+database.csv
 
 
