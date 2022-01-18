@@ -8,8 +8,7 @@ from dotenv import load_dotenv
     
 load_dotenv()
 
-def sendSMS(pwd,pno):
-    print('SMS sent!!')
+def sendSMS(pwd,pno): 
     account_sid = getenv('account_sid')
     auth_token = getenv('auth_token')
     client = Client(account_sid, auth_token)
@@ -126,8 +125,34 @@ def submit():
             sendSMS(pw,pn)
 
 def checkpno():
-    submit()
-
+    pn=pno.get()
+    out=[]
+    names=[]
+    flag=0
+    with open('database.csv','r') as f:
+        fr=reader(f)
+        if fr:
+            for i in fr:
+                names.append(i[0])
+                if i[0]==pn:
+                    if int(i[1])<=10:
+                        out.append([i[0],str(int(i[1])+1)])
+                    else:
+                        out.append(i)
+                        flag=1
+                else:
+                    out.append(i)
+            if pn not in names:
+                out.append([pn,'1'])
+        else:
+            out.append([pn,'1'])
+    with open('database.csv','w') as f:
+        fw=writer(f)
+        fw.writerows(out)
+    if flag!=1:
+        submit()
+    else:
+        nomore()
 
 def end():
     popup.destroy()
