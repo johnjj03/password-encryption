@@ -18,7 +18,7 @@ This project aims to generate and encrypt passwords for the user using Python.
 pip install -r requirements.txt
 ```
 
-- Generate the key required by running
+- Generate the key and create phone number csv file running
 
 ```
 python3 keygen.py
@@ -33,6 +33,8 @@ account_sid = 'your_account_sid'
 auth_token = 'your_auth_token'
 tno='+12345678901'
 ```
+
+- If you don't want to use the sms feature, just leave the phone number field blank while entering the password hint.
 
 - Start the app with the following command :
 
